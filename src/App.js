@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import CardComponent from "./CardComponent";
 
 function App() {
+  const [sideDrawer, setSideDrawer] = useState("false");
+  const [profileDrawer, setProfileDrawer] = useState("false");
+
+  const sideDrawerHandler = () => {
+    setSideDrawer(!sideDrawer);
+  };
+
+  const profileDrawerHandler = () => {
+    setProfileDrawer(!profileDrawer);
+  };
+
   return (
     <div>
-      <header className="bg-gray-800 border-b border-gray-700">
+      <header className="bg-gray-800 border-b border-gray-700 h-16">
         <div className="max-w-7xl mx-auto flex p-3 items-center justify-between">
           <div className="flex flex-1">
             <div>
@@ -50,14 +61,38 @@ function App() {
                     </svg>
                   </button>
                 </div>
-                <div className="text-center sm:flex-1">
-                  <button>
+                <div className="text-center relative sm:flex-1">
+                  <button
+                    className="focus:outline-none"
+                    onClick={profileDrawerHandler}
+                  >
                     <img
                       className="h-8 w-8 rounded-full"
                       src="/assets/author.jpg"
                       alt="user"
                     />
                   </button>
+                  <div
+                    className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md ${
+                      profileDrawer ? "" : "hidden"
+                    } `}
+                  >
+                    <div className="ml-2 mt-2 text-gray-600 text-sm flex-1 h-8">
+                      <button className="focus:outline-none w-full text-left">
+                        Your Profile
+                      </button>
+                    </div>
+                    <div className="ml-2 text-left text-gray-600 text-sm flex-1 h-8">
+                      <button className="focus:outline-none w-full text-left">
+                        Settings
+                      </button>
+                    </div>
+                    <div className="ml-2 text-left text-gray-600 text-sm flex-1 h-8">
+                      <button className="focus:outline-none w-full text-left">
+                        Sign Out
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,24 +117,103 @@ function App() {
                 </svg>
               </button>
             </div>
-            <div className="mr-3 ml-6">
-              <button>
+            <div className="mr-3 ml-6 relative">
+              <button
+                className="focus:outline-none"
+                onClick={profileDrawerHandler}
+              >
                 <img
                   className="h-8 w-8 rounded-full"
                   src="/assets/author.jpg"
                   alt="user"
                 />
               </button>
+              <div
+                className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md ${
+                  profileDrawer ? "" : "hidden"
+                } `}
+              >
+                <div className="ml-2 mt-2 text-gray-600 text-sm flex-1 h-8">
+                  <button className="focus:outline-none w-full text-left">
+                    Your Profile
+                  </button>
+                </div>
+                <div className="ml-2 text-left text-gray-600 text-sm flex-1 h-8">
+                  <button className="focus:outline-none w-full text-left">
+                    Settings
+                  </button>
+                </div>
+                <div className="ml-2 text-left text-gray-600 text-sm flex-1 h-8">
+                  <button className="focus:outline-none w-full text-left">
+                    Sign Out
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className="text-white mr-3 space-y-1 sm:hidden">
+          <div
+            className="text-white mr-3 space-y-1 sm:hidden"
+            onClick={sideDrawerHandler}
+          >
             <div className="h-1 w-8 bg-white rounded-sm"></div>
             <div className="h-1 w-8 bg-white rounded-sm"></div>
             <div className="h-1 w-8 bg-white rounded-sm"></div>
           </div>
         </div>
       </header>
+
+      <div
+        className={`w-full h-full absolute top-16 bg-gray-800 z-50 sm:hidden transition-all duration-500 ${
+          sideDrawer ? "" : "hidden"
+        }`}
+      >
+        <div className="ml-3 mt-2 flex-col justify-center items-center">
+          <div className="text-white text-sm flex-1 h-10">
+            <button>Dashboard</button>
+          </div>
+          <div className="text-white text-sm flex-1 h-10">
+            <button>Team</button>
+          </div>
+          <div className="text-white text-sm flex-1 h-10">
+            <button>Projects</button>
+          </div>
+          <div className="text-white text-sm flex-1 h-10">
+            <button>Calendar</button>
+          </div>
+          <div className="text-white text-sm flex-1 h-10">
+            <button>Report</button>
+          </div>
+        </div>
+        <div className="border-t border-b border-gray-700">
+          <div className="ml-3 mt-2 flex items-start h-10">
+            <div className="self-center">
+              <button>
+                <img
+                  className="w-8 h-8 rounded-full"
+                  src="/assets/author.jpg"
+                  alt="user"
+                />
+              </button>
+            </div>
+            <div className="ml-2">
+              <p className="text-xs text-white">Tom Cook</p>
+              <p className="text-xs text-gray-400">tom@apple.net</p>
+            </div>
+          </div>
+          <div className="ml-3 mt-2 flex-col justify-center items-center">
+            <div className="text-gray-300 text-sm flex-1 h-10">
+              <button>Your Profile</button>
+            </div>
+            <div className="text-gray-300 text-sm flex-1 h-10">
+              <button>Settings</button>
+            </div>
+            <div className="text-gray-300 text-sm flex-1 h-10">
+              <button>Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className="bg-gray-800">
         <div className="max-w-7xl mx-auto pt-5 pb-32  px-4 sm:px-6 lg:px-8">
