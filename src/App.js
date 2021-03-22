@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import CardComponent from "./CardComponent";
 
 function App() {
-  const [sideDrawer, setSideDrawer] = useState("false");
-  const [profileDrawer, setProfileDrawer] = useState("false");
+  const [sideDrawer, setSideDrawer] = useState(false);
+  const [profileDrawer, setProfileDrawer] = useState(false);
 
   const sideDrawerHandler = () => {
     setSideDrawer(!sideDrawer);
@@ -73,7 +73,7 @@ function App() {
                     />
                   </button>
                   <div
-                    className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md ${
+                    className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md z-0 ${
                       profileDrawer ? "" : "hidden"
                     } `}
                   >
@@ -129,7 +129,7 @@ function App() {
                 />
               </button>
               <div
-                className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md ${
+                className={`absolute top-10 right-0 bg-white w-40 h-auto rounded-md z-0 ${
                   profileDrawer ? "" : "hidden"
                 } `}
               >
