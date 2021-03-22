@@ -346,25 +346,25 @@ function App() {
                   <div className="border-b border-gray-200">
                     <nav className="-mb-px flex">
                       <a
-                        href="#"
+                        href="/"
                         className="whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
                       >
                         My Account
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
                       >
                         Company
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
                       >
                         Team Members
                       </a>
                       <a
-                        href="#"
+                        href="/"
                         className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
                       >
                         Billing
