@@ -4,7 +4,7 @@ import CardComponent from "./CardComponent";
 function App() {
   return (
     <div>
-      <header className="bg-gray-800 ">
+      <header className="bg-gray-800 border-b border-gray-700">
         <div className="max-w-7xl mx-auto flex p-3 items-center justify-between">
           <div className="flex flex-1">
             <div>
@@ -328,14 +328,14 @@ function App() {
 
       <main className="-mt-24">
         <div className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-          <div className="bg-white shadow overflow-hidden sm:rounded-md">
-            <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+          <div className="bg-white shadow overflow-hidden rounded-md">
+            <div className="bg-white px-4 pt-5 border-b border-gray-200 sm:px-6">
               <h3 className="text-lg leading-6 font-medium text-gray-900">
                 Job Postings
               </h3>
               <div>
-                <div className="sm:hidden">
-                  <select className="mt-1 block w-full pl-3 pr-10 py-2">
+                <div className="py-4 sm:hidden">
+                  <select className="block w-full pl-3 pr-10 py-2 border border-gray-300 focus:outline-none rounded-md">
                     <option>My Account</option>
                     <option>Company</option>
                     <option>Team Members</option>
@@ -343,7 +343,7 @@ function App() {
                   </select>
                 </div>
                 <div className="hidden sm:block">
-                  <div className="border-b border-gray-200">
+                  <div className="">
                     <nav className="-mb-px flex">
                       <a
                         href="/"
@@ -374,7 +374,152 @@ function App() {
                 </div>
               </div>
             </div>
+            <div className="px-4 pt-4 pb-3 sm:px-6">
+              <label for="filter_candidates" className="sr-only">
+                Filter Candidates
+              </label>
+              <div className="flex rounded-md shadow-sm">
+                <div className="relative flex-grow focus-within:z-10">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg
+                      className="h-5 w-5 text-gray-400"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    id="filter_candidates"
+                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-l-md focus:outline-none"
+                    placeholder="John doe"
+                  />
+                </div>
+                <button className="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 rounded-r-md">
+                  <svg
+                    className="h-5 w-5 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span className="ml-2">Filter</span>
+                </button>
+              </div>
+            </div>
             <CardComponent />
+            <div className="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+              <div className="flex-1 flex justify-between sm:hidden">
+                <a
+                  href="/"
+                  className="relative inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm"
+                >
+                  Previous
+                </a>
+                <a
+                  href="/"
+                  className="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 rounded-md text-sm"
+                >
+                  Next
+                </a>
+              </div>
+              <div className="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                <div>
+                  <p className="text-sm leading-5 text-gray-700">
+                    Showing <span className="font-medium">1</span> to{" "}
+                    <span className="font-medium">10</span> of{" "}
+                    <span className="font-medium">97</span> results
+                  </p>
+                </div>
+                <div>
+                  <span class="relative z-0 inline-flex shadow-sm">
+                    <button
+                      type="button"
+                      className="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      <svg
+                        className="h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                    <button
+                      type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      1
+                    </button>
+                    <button
+                      type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      2
+                    </button>
+                    <button
+                      type="button"
+                      class="hidden -ml-px relative md:inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      3
+                    </button>
+                    <span className="hidden -ml-px relative md:inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none">
+                      ...
+                    </span>
+                    <button
+                      type="button"
+                      class="hidden -ml-px relative md:inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      8
+                    </button>
+                    <button
+                      type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      9
+                    </button>
+                    <button
+                      type="button"
+                      class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      10
+                    </button>
+                    <button
+                      type="button"
+                      className="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 text-sm text-gray-700 focus:outline-none"
+                    >
+                      <svg
+                        className="h-5 w-5"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                          clip-rule="evenodd"
+                        />
+                      </svg>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
