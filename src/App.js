@@ -1,6 +1,5 @@
 import React from "react";
-import logo from "./assets/logo.png";
-import accimg from "./assets/author.jpg";
+import CardComponent from "./CardComponent";
 
 function App() {
   return (
@@ -9,7 +8,11 @@ function App() {
         <div className="max-w-7xl mx-auto flex p-3 items-center justify-between">
           <div className="flex flex-1">
             <div>
-              <img className="w-10 h-10 ml-3" src={logo} alt="logo" />
+              <img
+                className="w-10 h-10 ml-3"
+                src="/assets/logo.png"
+                alt="logo"
+              />
             </div>
             <div className="hidden sm:flex sm:flex-1 sm:items-center lg:flex lg:flex-1">
               <div className="text-white text-base flex-1 text-center ml-2">
@@ -51,7 +54,7 @@ function App() {
                   <button>
                     <img
                       className="h-8 w-8 rounded-full"
-                      src={accimg}
+                      src="/assets/author.jpg"
                       alt="user"
                     />
                   </button>
@@ -81,7 +84,11 @@ function App() {
             </div>
             <div className="mr-3 ml-6">
               <button>
-                <img className="h-8 w-8 rounded-full" src={accimg} alt="user" />
+                <img
+                  className="h-8 w-8 rounded-full"
+                  src="/assets/author.jpg"
+                  alt="user"
+                />
               </button>
             </div>
           </div>
@@ -284,7 +291,7 @@ function App() {
                 </button>
               </span>
             </div>
-            <div className="mt-5 block sm:hidden">
+            <div className="mt-5 sm:hidden flex items-center">
               <span className="mr-3">
                 <button
                   type="button"
@@ -306,11 +313,13 @@ function App() {
                 </button>
               </span>
               <span>
-                <select className="items-center shadow-sm rounded-md px-3 py-2 bg-gray-700 border border-transparent text-sm text-white">
-                  <option>More</option>
-                  <option>Edit</option>
-                  <option>View</option>
-                </select>
+                <button className="inline-flex items-center px-4 py-2 sm:px-2 md:px-4 bg-blue-500 border border-transparent shadow-sm rounded-md text-sm text-white">
+                  <select className="bg-blue-500 focus:outline-none">
+                    <option>More</option>
+                    <option>Edit</option>
+                    <option>View</option>
+                  </select>
+                </button>
               </span>
             </div>
           </div>
@@ -319,10 +328,53 @@ function App() {
 
       <main className="-mt-24">
         <div className="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-lg shadow px-5 py-5 sm:px-6">
-            <div className="h-64 flex items-center justify-center">
-              your content goes here
+          <div className="bg-white shadow overflow-hidden sm:rounded-md">
+            <div className="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+              <h3 className="text-lg leading-6 font-medium text-gray-900">
+                Job Postings
+              </h3>
+              <div>
+                <div className="sm:hidden">
+                  <select className="mt-1 block w-full pl-3 pr-10 py-2">
+                    <option>My Account</option>
+                    <option>Company</option>
+                    <option>Team Members</option>
+                    <option>Billing</option>
+                  </select>
+                </div>
+                <div className="hidden sm:block">
+                  <div className="border-b border-gray-200">
+                    <nav className="-mb-px flex">
+                      <a
+                        href="#"
+                        className="whitespace-nowrap py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
+                      >
+                        My Account
+                      </a>
+                      <a
+                        href="#"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
+                      >
+                        Company
+                      </a>
+                      <a
+                        href="#"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
+                      >
+                        Team Members
+                      </a>
+                      <a
+                        href="#"
+                        className="whitespace-nowrap ml-8 py-4 px-1 border-b-2 border-transparent font-medium text-gray-500"
+                      >
+                        Billing
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
             </div>
+            <CardComponent />
           </div>
         </div>
       </main>
